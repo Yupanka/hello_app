@@ -10,6 +10,12 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @micr
+    if @user.microposts.last
+      @micr = @user.microposts.last.content
+    else
+      @micr = "No posts so far"
+    end
   end
 
   # GET /users/new
